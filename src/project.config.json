@@ -36,12 +36,13 @@
     "packNpmRelationList": [],
     "minifyWXSS": true,
     "showES6CompileOption": false,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "checkSiteMap": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
   "appid": "wxbd26c08f2057f3d3",
-  "projectname": "miniprogram-1",
+  "projectname": "interestingMath",
   "debugOptions": {
     "hidedInDevtools": []
   },

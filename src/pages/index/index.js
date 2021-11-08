@@ -1,36 +1,63 @@
 // index.js
 // 获取应用实例
 const app = getApp()
-import { formatTime } from '../../utils/util.js'
+const selectListMap = require('../../utils/select-list')
 
 Page({
-  data: {
-    datetime: formatTime(new Date()),
-    moneyNum: 0,
-    suffixStr: 'CNY',
-    message: '',
-    numAnimation: {}
-  },
-  // 事件处理函数
-  onLoad: function() {
-    //  设置定时任务
-    setInterval(() => {
-        this.data.moneyNum ++
+    data: {
+        currentPlayType: 0,
+        currentPlayNum: 10,
+        playTypeList: [],
+        playNumList: []
+    },
+    // 事件处理函数
+    onLoad: function () {
+        const playTypeListTemp = []
+        const playNumListTemp = []
+        for (let listTypeKey of Object.keys(selectListMap)) {
+            switch (listTypeKey) {
+                case "playType":
+                    let playTypeListMap = selectListMap[listTypeKey]
+                    for (let playTypeKey of Object.keys(playTypeListMap)) {
+                        playTypeListTemp.push({
+                            key: playTypeKey,
+                            ...playTypeListMap[playTypeKey]
+                        })
+                    }
+                    break
+                case "playNum":
+                    let playNumListMap = selectListMap[listTypeKey]
+                    for (let playNumKey of Object.keys(playNumListMap)) {
+                        playNumListTemp.push({
+                            key: playNumKey,
+                            ...playNumListMap[playNumKey]
+                        })
+                    }
+                    break
+            }
+
+        }
         this.setData({
-          moneyNum: this.data.moneyNum,
-          date: formatTime(new Date()),
-          numAnimation: this.generateAnimation()
+            playTypeList: playTypeListTemp,
+            playNumList: playNumListTemp
         })
-    }, 1000)
-  },
-  generateAnimation(){
-    const animation =  wx.createAnimation({
-      duration: 500,
-      timingFunction: 'ease-in-out'
-    })
-    animation
-      .opacity(0).step()
-      .opacity(1).step()
-    return animation.export()
-  }
+    },
+
+    onRadioChangePlayType: function (event) {
+        this.setData({
+            currentPlayType: event.detail.value
+        })
+    },
+
+    onRadioChangePlayNum: function (event) {
+        this.setData({
+            currentPlayNum: event.detail.value
+        })
+    },
+
+    onCommitSelected: function (event) {
+        wx.navigateTo({
+            url: '/pages/play-game/play-game?curPlayType=' + this.data.currentPlayType + '&curPlayNum' + this.data.currentPlayNum
+        })
+    }
 })

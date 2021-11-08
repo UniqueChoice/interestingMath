@@ -1,9 +1,31 @@
-/**index.wxss**/
+/**index.less**/
+.select-panel {
+  width:80%;
+  .select-label {
+    background-color: lightgray;
+    font-size: x-large;
+    padding: 10px 0;
+  }
 
-.usermotto {
-  margin-top: 100px;
+  .select-radio-group {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+  }
+
+  .select-radio {
+    padding: 5px 0;
+    font-size: x-large;
+    border-top: 1px solid #ddd;
+  }
 }
-
-.datetime {
-  margin-top: 100px;
+.commit-panel{
+  padding-top: 20px;
+  .commit-button{
+    background-color: lightgray;
+    font-size: x-large;
+  }
+  .commit-button-hover{
+    background-color: darkgray;
+  }
 }

@@ -1,9 +1,29 @@
-/**index.wxss**/
-
-.usermotto {
-  margin-top: 100px;
+/**index.less**/
+.select-panel {
+  width: 80%;
 }
-
-.datetime {
-  margin-top: 100px;
+.select-panel .select-label {
+  background-color: lightgray;
+  font-size: x-large;
+  padding: 10px 0;
+}
+.select-panel .select-radio-group {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+}
+.select-panel .select-radio {
+  padding: 5px 0;
+  font-size: x-large;
+  border-top: 1px solid #ddd;
+}
+.commit-panel {
+  padding-top: 20px;
+}
+.commit-panel .commit-button {
+  background-color: lightgray;
+  font-size: x-large;
+}
+.commit-panel .commit-button-hover {
+  background-color: darkgray;
 }

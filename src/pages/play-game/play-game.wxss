@@ -1,0 +1,30 @@
+/**
+
+* @author King
+
+* @date 2021-11-08 15:17
+
+*/
+.formula-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+.formula-panel .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+}
+.commit-panel {
+  padding-top: 20px;
+}
+.commit-panel .commit-button {
+  background-color: lightgray;
+  font-size: x-large;
+}
+.commit-panel .commit-button-hover {
+  background-color: darkgray;
+}

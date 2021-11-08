@@ -1,0 +1,23 @@
+<!--pages/play-game/play-game.wxml-->
+<view class="container">
+    <view class="formula-panel">
+        <view class="item">
+            <text class="item-text">3</text>
+        </view>
+        <view class="item">
+            <text class="item-text">+</text>
+        </view>
+        <view class="item">
+            <text class="item-text">4</text>
+        </view>
+        <view class="item">
+            <text class="item-text">=</text>
+        </view>
+        <view class="item">
+            <input class="item-text" value="?"></input>
+        </view>
+    </view>
+    <view class="commit-panel">
+        <button class="commit-button" hover-class="commit-button-hover">下一题</button>
+    </view>
+</view>

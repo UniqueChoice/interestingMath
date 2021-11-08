@@ -1,10 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="usermotto">
-        <text class="money-num" animation="{{numAnimation}}">{{moneyNum}}</text>
-        <text class="user-motto">{{suffixStr}}</text>
+    <view class="select-panel">
+        <view class="select-label">
+            <text class="font-x-larger">请选择题目类型</text>
+        </view>
+        <radio-group class="select-radio-group " bindchange="onRadioChangePlayType">
+            <radio class="select-radio font-larger" wx:for-items="{{playTypeList}}" wx:key="key" value="{{item.type}}" checked="{{item.checked}}">
+                <text>{{item.type}}</text>
+            </radio>
+        </radio-group>
     </view>
-    <view class="datetime">
-        <text class="date-time" animation="{{numAnimation}}">{{date}}</text>
+    <view class="select-panel">
+        <view class="select-label">
+            <text class="font-x-larger">请选择题目个数</text>
+        </view>
+        <radio-group class="select-radio-group" bindchange="onRadioChangePlayNum">
+            <radio class="select-radio font-larger" wx:for-items="{{playNumList}}" wx:key="key" value="{{item.num}}" checked="{{item.checked}}">
+                <text>{{item.num}}</text>
+            </radio>
+        </radio-group>
+    </view>
+    <view class="commit-panel">
+        <button class="commit-button" hover-class="commit-button-hover" bindtap="onCommitSelected">确定</button>
     </view>
 </view>
