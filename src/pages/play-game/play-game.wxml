@@ -1,23 +1,17 @@
 <!--pages/play-game/play-game.wxml-->
 <view class="container">
+    <swiper></swiper>
     <view class="formula-panel">
-        <view class="item">
-            <text class="item-text">3</text>
-        </view>
-        <view class="item">
-            <text class="item-text">+</text>
-        </view>
-        <view class="item">
-            <text class="item-text">4</text>
-        </view>
-        <view class="item">
-            <text class="item-text">=</text>
-        </view>
-        <view class="item">
-            <input class="item-text" value="?"></input>
+        <view class="item" wx:for="{{curComputeItem}}" wx:key="display">
+            <view class="item-text" wx:if="{{item.display !== 0}}">
+                <text>{{item.part}}</text>
+            </view>
+            <view class="item-text item-input" wx:if="{{item.display === 0}}">
+                <input data-result="{{item.result}}" value="" bindinput="onResultChange">{{item.key}}</input>
+            </view>
         </view>
     </view>
     <view class="commit-panel">
-        <button class="commit-button" hover-class="commit-button-hover">下一题</button>
+        <button class="commit-button" hover-class="commit-button-hover" bindtap="onClickCommit">提交</button>
     </view>
 </view>

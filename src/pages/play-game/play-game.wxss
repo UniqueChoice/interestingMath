@@ -18,6 +18,17 @@
   height: 50px;
   width: 50px;
 }
+.formula-panel .item .item-text {
+  font-size: x-large;
+}
+.formula-panel .item .item-input {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  line-height: 100%;
+  border: 1px solid #787878;
+  background-color: lightcyan;
+}
 .commit-panel {
   padding-top: 20px;
 }

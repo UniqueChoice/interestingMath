@@ -6,7 +6,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "InterestingMath",
+    "navigationBarTitleText": "趣味数学",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",

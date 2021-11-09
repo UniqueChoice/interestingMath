@@ -4,8 +4,8 @@
         <view class="select-label">
             <text class="font-x-larger">请选择题目类型</text>
         </view>
-        <radio-group class="select-radio-group " bindchange="onRadioChangePlayType">
-            <radio class="select-radio font-larger" wx:for-items="{{playTypeList}}" wx:key="key" value="{{item.type}}" checked="{{item.checked}}">
+        <radio-group class="select-radio-group ">
+            <radio class="select-radio font-larger" wx:for-items="{{playTypeList}}" wx:key="key" data-number="{{item.number}}" data-operator="{{item.operator}}" data-max="{{item.max}}" checked="{{item.checked}}" bindtap="onRadioTapPlayType">
                 <text>{{item.type}}</text>
             </radio>
         </radio-group>
@@ -14,9 +14,9 @@
         <view class="select-label">
             <text class="font-x-larger">请选择题目个数</text>
         </view>
-        <radio-group class="select-radio-group" bindchange="onRadioChangePlayNum">
-            <radio class="select-radio font-larger" wx:for-items="{{playNumList}}" wx:key="key" value="{{item.num}}" checked="{{item.checked}}">
-                <text>{{item.num}}</text>
+        <radio-group class="select-radio-group">
+            <radio class="select-radio font-larger" wx:for-items="{{playCountList}}" wx:key="key" data-count="{{item.count}}" checked="{{item.checked}}" bindtap="onRadioTapPlayCount">
+                <text>{{item.count}}</text>
             </radio>
         </radio-group>
     </view>
